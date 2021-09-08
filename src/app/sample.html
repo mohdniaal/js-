@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="password" placeholder="password" id="password">
+    <input type="repassword" id="repassword" >
+    <button onclick="repass()">Click Here</button>
+    <label id="one"></label>
+    <script>
+    function repass(){
+    password = document.getElementById("password").value
+    repassword = document.getElementById("repassword").value
+    if(password==repassword){
+        document.getElementById("one").innerHTML="correct"
+    }
+    else{
+        document.getElementById("one").innerHTML="incorrect"
+    }
+}
+    </script>
+</body>
+</html>
