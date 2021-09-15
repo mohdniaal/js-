@@ -8,7 +8,7 @@
 </head>
 <body>
     <input type="number" id="num">
-    <button onclick="finnum">Click Here</button>
+    <button onclick="finnum()">Click Here</button>
     <label id="one"></label>
     <script>
         function finnum(){
@@ -24,6 +24,22 @@
             else if(num>70)
             {
                 document.getElementById("one").innerHTML="B+"
+            }
+            else if(num>60)
+            {
+                document.getElementById('one').innerHTML="B"
+            }
+            else if(num>50)
+            {
+                document.getElementById("one").innerHTML="c+"
+            }
+            else if(num>40)
+            {
+                document.getElementById("one").innerHTML="c"
+            }
+            else if(num<40)
+            {
+                document.getElementById("one").innerHTML="failed"
             }
         }
     </script>

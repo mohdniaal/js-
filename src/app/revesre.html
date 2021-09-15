@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="number" placeholder="enter the number" id=num>
+    <button onclick="fnrev()">reverse</button>
+    <script>
+        function fnrev()
+        {
+           n1=document.getElementById("num").value
+            rev=0;
+         while(n1>0)
+         {
+             remainder=n1%10
+             rev=(rev*10)+remainder
+             n1=parseInt(n1/10)
+         }
+         console.log(rev)
+        }
+    </script>
+</body>
+</html>
