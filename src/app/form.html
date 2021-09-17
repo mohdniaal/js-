@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="" method="post" name="form1" onsubmit="return validate()">
+        
+        <input type="text" id="username" name="username" placeholder="enter name">
+        <p  id="n1"></p>
+        
+        <input type="password" id="pswd" placeholder="password">
+        <p id="n2"></p>
+    
+        <input type="email" id="email" placeholder="enter your email">
+        <p id="n3"></p>
+
+        <input type="number" id="number" placeholder="enter number">
+        <p id="n4"></p>
+        
+        <button>submit</button>
+    </form>
+    <script>
+        function validate()
+        {
+            name=document.forms['form1']['username'].value
+            password=document.forms['form1']['pswd'].value
+            email=document.forms['form1']['email'].value
+            number=document.forms['form1']['number'].value
+            rt=true
+            if(name==""){
+                document.getElementById('n1').innerHTML="enter your name";
+                document.getElementById('username').style.borderColor="red";
+                document.getElementById('username').focus();
+                rt=false;
+            }
+            else if(name.length<6){
+                document.getElementById("n1").innerHTML="min 6";
+                rt=false;
+            }
+        if(password==""){
+            document.getElementById("n2").innerHTML="enter your password"
+            document.getElementById("pswd").style.borderColor="red";
+            document.getElementById("pswd").focus()
+            rt=false
+        }
+        else if(password.length<6){
+        document.getElementById("n2").innerHTML="min 6 character"
+        rt=false
+        }
+    email=document.forms['form1']['email'].value
+    rt=true
+    if(email==""){
+        document.getElementById("n3").innerHTML="enter your email"
+        document.getElementById("email").style.borderColor="red"
+        document.getElementById("email").focus()
+        rt=false
+    }
+    else if(email.length<6){
+        document.getElementById("email").innerHTML="min 6"
+        rt=false
+    }
+    number=document.forms['form1']['number'].value
+    rt=true
+    if(isNaN(number)){
+        document.getElementById("n4").innerHTML="enter your number"
+        document.getElementById("number").style.borderColor="red"
+        document.getElementById("number").focus()
+        rt=false
+    }
+    else if(number.length<10){
+        document.getElementById("number").innerHTML="min 10 numbers"
+        rt=false
+    }
+    return rt
+}
+    </script>
+</body>
+</html>
